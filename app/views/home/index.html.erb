@@ -1,0 +1,31 @@
+<script src="<%= asset_path 'intl/dist/Intl.js' %>"></script>
+<script src="<%= asset_path 'intl/locale-data/jsonp/en.js' %>"></script>
+
+<script src="<%= asset_path 'es6-shim/es6-shim.min.js' %>"></script>
+<script src="<%= asset_path 'systemjs/dist/system-polyfills.js' %>"></script>
+
+<script src="<%= asset_path 'angular2/bundles/angular2-polyfills.js' %>"></script>
+<script src="<%= asset_path 'systemjs/dist/system.src.js' %>"></script>
+<script src="<%= asset_path 'rxjs/bundles/Rx.js' %>"></script>
+<script src="<%= asset_path 'angular2/bundles/angular2.dev.js' %>"></script>
+<script src="<%= asset_path 'angular2/bundles/http.dev.js' %>"></script>
+<script src="<%= asset_path 'angular2/bundles/router.dev.js' %>"></script>
+
+<script>
+  System.config({
+    map: {
+      'app': '/app',
+    },
+    packages: {
+      'app': {
+        format: 'register',
+        defaultExtension: 'js'
+      }
+    }
+  });
+  // and to finish, let's boot the app!
+  System.import("<%= asset_path 'ng2/js/boot.js' %>");
+</script>
+
+<base href="/">
+<app-router></app-router>
